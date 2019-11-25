@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_student, only: [:show, :edit, :update]
 
   def index
     @students = Student.all
@@ -13,7 +13,7 @@ class StudentsController < ApplicationController
     @student = Student.new(student_params)
     if @student.save
       flash[:notice] = "You have successfully sign up."
-      redirect_to root_path
+      redirect_to student_path
     else
       render 'new'
     end
@@ -40,7 +40,7 @@ class StudentsController < ApplicationController
       params.require(:student).permit(:name, :email)
     end
 
-    def set_user
+    def set_student
       @student = Student.find(params[:id])
     end
 end
