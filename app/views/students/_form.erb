@@ -19,9 +19,19 @@
           <%= f.label :email, class: "icon_email" %>
           <%= f.text_field :email, class: "icon_email validate" %>
         </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">lock</i>
+          <%= f.label :password, class: "icon_lock" %>
+          <%= f.password_field :password, class: "icon_lock validate" %>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">lock</i>
+          <%= f.label :password_confirmation, class: "icon_lock" %>
+          <%= f.password_field :password_confirmation, class: "icon_lock validate" %>
+        </div>
         <div class="row">
           <div class="input-field col s12">
-            <%= f.submit(@student.new_record? ? "Sign Up" : "Submit updates" , class: "btn waves-effect waves-light") %>
+            <%= f.button(@student.new_record? ? "Sign Up" : "Submit updates" , class: "btn waves-effect waves-light") %>
           </div>
         </div>
       </div>

@@ -13,7 +13,7 @@ class StudentsController < ApplicationController
     @student = Student.new(student_params)
     if @student.save
       flash[:notice] = "You have successfully sign up."
-      redirect_to student_path
+      redirect_to @student
     else
       render 'new'
     end
@@ -28,7 +28,7 @@ class StudentsController < ApplicationController
   def update
     if @student.update(student_params)
       flash[:success] = "Student was successfully updated."
-      redirect_to student_path
+      redirect_to @student
     else
       render 'edit'
     end
@@ -37,7 +37,7 @@ class StudentsController < ApplicationController
   private
 
     def student_params
-      params.require(:student).permit(:name, :email)
+      params.require(:student).permit(:name, :email, :password, :password_confirmation)
     end
 
     def set_student
