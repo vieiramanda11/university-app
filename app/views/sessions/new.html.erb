@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col s12">
+    <h3 class="center-align">Log In</h3>
+  </div>
+</div>
+<div class="container">
+  <div class="row center">
+    <%= form_for(:logins, html: { class: "col s12" }) do |f| %>
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">email</i>
+          <%= f.label :email, class: "icon_email" %>
+          <%= f.text_field :email, class: "icon_email validate" %>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">lock</i>
+          <%= f.label :password, class: "icon_lock" %>
+          <%= f.password_field :password, class: "icon_lock validate" %>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <%= f.button "Login", class: "btn waves-effect waves-light" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
